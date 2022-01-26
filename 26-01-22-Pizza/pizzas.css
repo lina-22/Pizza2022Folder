@@ -1,0 +1,30 @@
+span
+{
+	border:1px solid #aaaaaa;
+}
+
+#principale
+{
+	min-height: 600px;
+}
+#bordurepanier
+{
+	border:1px solid forestgreen;
+}
+nav#bandeau
+{
+	background:linear-gradient(to right, forestgreen,white, red);
+}
+
+label#titre
+{
+	font-size:70px;
+	font-family:Poiret One;
+	font-weight:bold;
+}
+
+footer
+{
+	background:linear-gradient(to right, forestgreen,white, red);
+	font-size:18px;
+}
