@@ -19,7 +19,10 @@ urlimage="images/"+indexImage+".jpg";
 // affichage de l'image correspondant à la pizza sélectionnée
 $("#imgpizza").attr('src', urlimage);
 
+// affichage des infos de la pizza sélectionée
+chaineinfos=afficheInfos(xmlpizzas,numPizza);
 
+// ------------------------------
 // fonctions/procédures
 function afficheInfos(xmlpizzas,numPizza){
 //  on récupère la valeur de la valeur "vegetarienne"
@@ -42,11 +45,14 @@ var nouvelle = getElement(xmlpizzas,"v_pizzas","numPizza",numPizza,"new");
  }
 
 //  construction de la chaine de caratères
-var chaine ="";
-chaine+="Végétarienne :"+veget;
-chaine+= "<br/>";
+var chaine="";
+chaine+="Végétarienne: "+veget;
+chaine+="<br>";
 
-chaine+="Nouveau : "+nouvelle
+chaine+="Nouveau: "+nouvelle;
+chaine+="<br>";
+
+return chaine;
 
 }
 
