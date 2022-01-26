@@ -21,7 +21,12 @@ $("#imgpizza").attr('src', urlimage);
 
 // affichage des infos de la pizza sélectionée
 chaineinfos=afficheInfos(xmlpizzas,numPizza);
-
+$("#divinfos").html(chaineinfos);
+// récupération de la chaine xml pour une table ou une vue spécifiée
+// on filtre les ingredients sur le numéro de la pizza sélectionée
+xmlingred=getXmlBase("v_ingredpizza","numPizza",numPizza);
+chaine=afficheIngredients(xmlingred);
+// alert(xmlingred);
 // ------------------------------
 // fonctions/procédures
 function afficheInfos(xmlpizzas,numPizza){
@@ -54,6 +59,24 @@ chaine+="<br>";
 
 return chaine;
 
+}
+
+// fonction qui retourne une chaine après qu'on ait parsé la chaine xml
+
+function afficheIngrediants(xmlingred)
+{
+    // parcours des élément  de la chaine xml
+    $(xmlingred).find("v_ingredpizza").each
+    (
+        function()
+        {
+            var nom = $(this).find("nomIngredient").text();
+            chaine+=nom;
+            chaine+="<br/>";
+        }
+
+    );
+    return chaine;
 }
 
 
